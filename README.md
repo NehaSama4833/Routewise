@@ -63,7 +63,7 @@ Raw data and tables are in `results/`.
 | Cache doubled to 400 blocks | 1.15 s | 34.34 s | 0.85 s |
 | Router's service-time guess 0.5 s / 2.0 s (default 1.0 s) | 1.65 s | 22.35 s | 1.11 s / 1.34 s |
 
-- The load-aware policy beat round-robin in every variation tested, but the margin depends on conditions. With a larger cache or heavy skew, round-robin already hits 65-66% of blocks, so the gain shrinks to about 25-30% on p99.
+- The load-aware policy beat round-robin in every variation tested, but the margin depends on conditions. With a larger cache or heavy skew, round-robin already hits 65-66% of blocks, so the gain shrinks to about 20-25% on p99 (versus about 35% with uniform prompts, where round-robin hits only 29%).
 - The load-aware policy's result moved by about 20% when its guessed service time changed (1.11 s to 1.34 s). That guess is a tunable parameter here, not something it learns.
 
 ## Limitations
