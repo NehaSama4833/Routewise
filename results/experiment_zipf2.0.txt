@@ -1,0 +1,6 @@
+| rate (req/s) | policy | TTFT p50 | TTFT p95 | TTFT p99 (min..max over seeds) | cache hit rate | busiest backend share |
+|---|---|---|---|---|---|---|
+| 5 | round_robin | 0.14s | 0.77s | 1.16s (1.12..1.26) | 66% | 25% |
+| 5 | least_loaded | 0.13s | 0.72s | 1.21s (1.07..1.28) | 66% | 30% |
+| 5 | prefix_greedy | 32.89s | 127.76s | 135.84s (114.99..153.95) | 84% | 66% |
+| 5 | prefix_load_aware | 0.12s | 0.64s | 0.90s (0.71..1.01) | 76% | 29% |

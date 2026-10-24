@@ -1,0 +1,14 @@
+| rate (req/s) | policy | TTFT p50 | TTFT p95 | TTFT p99 (min..max over seeds) | cache hit rate | busiest backend share |
+|---|---|---|---|---|---|---|
+| 3 | round_robin | 0.35s | 0.66s | 0.82s (0.77..0.92) | 43% | 25% |
+| 3 | least_loaded | 0.36s | 0.66s | 0.75s (0.66..0.92) | 43% | 33% |
+| 3 | prefix_greedy | 0.12s | 1.07s | 1.87s (1.55..2.26) | 82% | 44% |
+| 3 | prefix_load_aware | 0.12s | 0.63s | 0.66s (0.66..0.66) | 71% | 30% |
+| 5 | round_robin | 0.57s | 1.18s | 1.65s (1.55..1.73) | 42% | 25% |
+| 5 | least_loaded | 0.57s | 1.14s | 1.64s (1.53..1.72) | 43% | 29% |
+| 5 | prefix_greedy | 1.40s | 18.95s | 22.35s (3.19..70.04) | 83% | 43% |
+| 5 | prefix_load_aware | 0.14s | 0.72s | 1.09s (1.04..1.14) | 68% | 26% |
+| 7 | round_robin | 4.37s | 11.69s | 13.32s (7.95..21.01) | 42% | 25% |
+| 7 | least_loaded | 3.58s | 9.14s | 10.20s (5.74..14.96) | 43% | 26% |
+| 7 | prefix_greedy | 1.15s | 54.51s | 58.31s (42.31..89.74) | 83% | 39% |
+| 7 | prefix_load_aware | 0.71s | 2.81s | 3.48s (2.27..6.18) | 62% | 26% |
